@@ -22,10 +22,24 @@ public class Scene {
 
         Geezer theGeezer = Geezer.getTheGeezer();
 
-        SteganographyClassLoader loader = new SteganographyClassLoader(
-                new URL("https://cdn.njuics.cn/example.BubbleSorter.png"));
+        SteganographyClassLoader loader;
+        Class c;
 
-        Class c = loader.loadClass("example.BubbleSorter");
+        // 载入测试用图片
+        // loader = new SteganographyClassLoader(new
+        // URL("file:example.BubbleSorter.png"));
+        // c = loader.loadClass("example.BubbleSorter");
+
+        // 载入编码了快速排序的图片
+        // loader = new SteganographyClassLoader(new URL("file:example.BubbleSorter.png"));
+        // c = loader.loadClass("example.BubbleSorter");
+        loader = new SteganographyClassLoader(new URL("file:example.QuickSorter.png"));
+        c = loader.loadClass("example.QuickSorter");
+
+        // 载入其他同学生成的图片
+        // loader = new SteganographyClassLoader(new
+        // URL("file:example.ShellSorter.png"));
+        // c = loader.loadClass("example.ShellSorter");
 
         Sorter sorter = (Sorter) c.newInstance();
 
