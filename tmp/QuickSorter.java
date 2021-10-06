@@ -1,4 +1,6 @@
-package example;
+package tmp;
+import example.Sorter;
+
 
 
 public class QuickSorter implements Sorter {
